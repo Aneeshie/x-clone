@@ -6,7 +6,7 @@ import React from "react";
 const HomePage = () => {
   return (
     <div>
-      <div className="flex justify-between text-textGray border-b-[1px] border-borderGray">
+      <div className="flex justify-between text-textGray border-b-[1px] border-borderGray p-3">
         <Link
           href={"/"}
           className="pb-3 flex items-center border-b-4 border-iconBlue"
@@ -16,18 +16,14 @@ const HomePage = () => {
         <Link href={"/"} className="pb-3 flex items-center">
           Following
         </Link>
-        <Link href={"/"} className="pb-3 flex items-center">
+        <Link href={"/"} className="hidden pb-3 md:flex items-center">
           Nextjs
         </Link>
-        <Link href={"/"} className="pb-3 flex items-center">
+        <Link href={"/"} className="hidden pb-3 md:flex items-center">
           Typescript
-        </Link>
-        <Link href={"/"} className="pb-3 flex items-center">
-          Postgres
         </Link>
       </div>
       <Share />
-      <Feed />
       <Feed />
     </div>
   );

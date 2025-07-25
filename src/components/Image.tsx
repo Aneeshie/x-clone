@@ -1,6 +1,4 @@
-import { Image, ImageKitProvider } from "@imagekit/next";
-
-const imageKitUrl = process.env.NEXT_PUBLIC_URL_ENDPOINT!;
+import { Image } from "@imagekit/next";
 
 const ImageKit = ({
   path,
@@ -22,16 +20,14 @@ const ImageKit = ({
     : undefined;
 
   return (
-    <ImageKitProvider urlEndpoint={imageKitUrl}>
-      <Image
-        src={path}
-        alt={alt}
-        width={w || 60}
-        height={h || 60}
-        transformation={transformation}
-        className={className}
-      />
-    </ImageKitProvider>
+    <Image
+      src={path}
+      alt={alt}
+      width={w || 60}
+      height={h || 60}
+      transformation={transformation}
+      className={className}
+    />
   );
 };
 
