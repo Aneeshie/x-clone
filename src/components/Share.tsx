@@ -45,7 +45,7 @@ const Share = () => {
           className="bg-transparent outline-none placeholder:text-textGray text-xl"
         />
         {/* PREVIEW IMAGE TO POST  */}
-        {previewURL && (
+        {media?.type.includes("image") && previewURL && (
           <div className="relative rounded-xl overflow-hidden">
             <Image
               src={previewURL}
@@ -66,6 +66,23 @@ const Share = () => {
             >
               Edit
             </div>
+            <div
+              className="absolute top-2 right-2 bg-black bg-opacity-50 text-white size-8 flex items-center rounded-full cursor-pointer font-bold text-sm"
+              onClick={() => setMedia(null)}
+            >
+              X
+            </div>
+          </div>
+        )}
+        {media?.type.includes("video") && previewURL && (
+          <div className="relative">
+            <video src={previewURL} controls />
+            <div
+              className="absolute top-2 right-2 bg-black bg-opacity-50 text-white size-8 flex items-center rounded-full cursor-pointer font-bold text-sm"
+              onClick={() => setMedia(null)}
+            >
+              X
+            </div>
           </div>
         )}
         {/* IMAGE EDITOR  */}
@@ -85,6 +102,7 @@ const Share = () => {
               className="hidden"
               name="file"
               id="file"
+              accept="image/*,video/*"
             />
             <label htmlFor="file">
               <ImageKit
