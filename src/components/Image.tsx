@@ -9,8 +9,8 @@ const ImageKit = ({
   className,
 }: {
   path: string;
-  w: number;
-  h: number;
+  w?: number;
+  h?: number;
   alt: string;
   tr?: boolean;
   className?: string;
